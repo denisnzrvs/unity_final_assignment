@@ -3,12 +3,13 @@ using UnityEngine;
 public class ItemObject : MonoBehaviour
 {
     public InventoryItemData referenceItem;
+    private bool isEPressed = false;
 
-    public void OnHandlePickupItem()
+    public void OnHandlePickupItem(GameObject obj)
     {
         InventorySystem.current.Add(referenceItem);
-        Destroy(gameObject);
-        Debug.Log(InventorySystem.current.inventory);
+        Destroy(obj);
+
     }
 
     void Update()
@@ -25,10 +26,20 @@ public class ItemObject : MonoBehaviour
 
             Debug.Log("Player is looking at: " + objectLookedAt.name);
 
-            if (Input.GetKeyDown(KeyCode.E))
+            // Check if the E key is pressed and if it's not already being processed
+            if (Input.GetKeyDown(KeyCode.E) && !isEPressed)
             {
-                OnHandlePickupItem();
+                Debug.Log("Item picked up (E is pressed)");
+                // Set the flag to indicate that the E key is being processed
+                isEPressed = true;
+                // Call the item pickup method
+                OnHandlePickupItem(objectLookedAt);
             }
+        }
+        else
+        {
+            // Reset the flag if the player is not looking at any object
+            isEPressed = false;
         }
     }
 }

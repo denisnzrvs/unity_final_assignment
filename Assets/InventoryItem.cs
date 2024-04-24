@@ -11,7 +11,6 @@ public class InventoryItem
     public InventoryItem(InventoryItemData source)
     {
         data = source;
-        AddToStack();
     }
 
     public void AddToStack()

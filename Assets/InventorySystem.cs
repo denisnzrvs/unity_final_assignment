@@ -15,11 +15,11 @@ public class InventorySystem : MonoBehaviour
         if (current == null)
         {
             current = this;
-        } else
-        {
-            Debug.Log("An instance of InventorySystem already exists, another is not created.");
         }
-        
+        else
+        {
+            Debug.Log("An instance of InventorySystem already exists."); //Does this make dublicate?
+        }
         inventory = new List<InventoryItem>();
         m_itemDictionary = new Dictionary<InventoryItemData, InventoryItem>();
     }
