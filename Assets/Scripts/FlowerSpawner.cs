@@ -29,7 +29,7 @@ public class FlowerSpawner : MonoBehaviour
                         // Randomly select a flower prefab from the array
                         GameObject flowerPrefab = flowerPrefabs[Random.Range(0, flowerPrefabs.Length)];
                         GameObject flower = Instantiate(flowerPrefab, hit.point + Vector3.up * offset, Quaternion.Euler(new Vector3(0, Random.Range(0, 360), 0)), transform);
-                        Debug.Log("Flower spawned at: " + hit.point);
+                        Debug.Log("Flower spawned");
                         // Scale the instantiated flower prefab
                         flower.transform.localScale = Vector3.one * 30f;
                     }

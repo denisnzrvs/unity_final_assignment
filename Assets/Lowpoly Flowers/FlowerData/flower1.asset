@@ -10,9 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 02395bbcb7ab9462bb8c0bf9a76946cb, type: 3}
-  m_Name: Test
+  m_Name: flower1
   m_EditorClassIdentifier: 
-  id: 1
-  displayName: TestItem
-  icon: {fileID: 21300000, guid: 53c550dde212d4e18a7a72a116cd2530, type: 3}
-  prefab: {fileID: 3259460153219114249, guid: 54b4e12589ef742ceb05c8b461d24150, type: 3}
+  id: 0
+  sugarPoints: 1
