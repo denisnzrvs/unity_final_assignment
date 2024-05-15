@@ -6,11 +6,12 @@ public class fadingCoroutine : MonoBehaviour
 {
     [SerializeField] private CanvasGroup canvasGroup;
     [SerializeField] private float fadeDuration = 5.0f;
-    [SerializeField] public static bool fadeIn = false;
+    [SerializeField] public static bool fadeIn = true;
 
     public void FadeIn()
     {
         StartCoroutine(FadeCanvasGroup(canvasGroup, canvasGroup.alpha, 0, fadeDuration));
+        fadeIn = false;
     }
 
     public void FadeOut()
@@ -30,12 +31,11 @@ public class fadingCoroutine : MonoBehaviour
         canvasGroup.alpha = end;
     }
 
-    void Start()
+    void Update()
     {
-        if (fadeIn)
+        if (fadeIn && Input.GetKeyDown(KeyCode.Return))
         {
             FadeIn();
         }
-
     }
 }
