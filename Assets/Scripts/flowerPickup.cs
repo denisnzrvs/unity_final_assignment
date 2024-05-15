@@ -12,10 +12,14 @@ public class flowerPickup : MonoBehaviour
 
         PlayerInventory playerInventory = other.GetComponent<PlayerInventory>();
 
-        if (playerInventory != null && flowerData != null)
+        if (playerInventory != null && flowerData != null && playerInventory.sugarPoints < 100)
         {
             playerInventory.AddSugar(flowerData.sugarPoints);
             Destroy(gameObject);
+        }
+        else
+        {
+            Debug.Log("Enough sugar has been collected.");
         }
     }
 }
