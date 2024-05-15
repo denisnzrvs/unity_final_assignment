@@ -22,7 +22,7 @@ public class flowerPickup : MonoBehaviour
             playerInventory.AddSugar(flowerData.sugarPoints);
 
             // Check if player's inventory has 10 or more sugar points
-            if (playerInventory.sugarPoints >= 10)
+            if (playerInventory.sugarPoints >= 100)
             {
                 // Call FadeOut method if conditions are met
                 if (fadingScript != null)
